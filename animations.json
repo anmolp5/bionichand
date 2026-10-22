@@ -1,0 +1,390 @@
+{
+    "WAVE": {
+        "curve": "S-Curve (Cosine)",
+        "hold_ms": 0,
+        "keyframes": [
+            {
+                "angles": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW"
+                ],
+                "hold_time": 400,
+                "limits": [
+                    180,
+                    180,
+                    180,
+                    180,
+                    180,
+                    180,
+                    180
+                ],
+                "name": "Open Hand",
+                "type": "pause"
+            },
+            {
+                "angles": [
+                    110,
+                    153,
+                    130,
+                    115,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Custom Pose (2)",
+                "type": "pause"
+            }
+        ],
+        "loop": "ON",
+        "speed_mult": "1.0x",
+        "trans_ms": 378
+    },
+    "clock it": {
+        "curve": "",
+        "trans_ms": 300,
+        "hold_ms": 0,
+        "speed_mult": "1.0x",
+        "loop": "ON",
+        "keyframes": [
+            {
+                "name": "Captured Snapshot",
+                "type": "pause",
+                "hold_time": 500,
+                "angles": [
+                    76,
+                    0,
+                    0,
+                    0,
+                    0,
+                    27,
+                    39
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ]
+            },
+            {
+                "name": "Captured Snapshot",
+                "type": "pause",
+                "hold_time": 3900,
+                "angles": [
+                    65,
+                    0,
+                    0,
+                    0,
+                    0,
+                    19,
+                    39
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ]
+            }
+        ]
+    },
+    "jazz hands": {
+        "curve": "Linear",
+        "hold_ms": 0,
+        "keyframes": [
+            {
+                "angles": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Open Hand",
+                "type": "pause"
+            },
+            {
+                "angles": [
+                    20,
+                    55,
+                    45,
+                    60,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Custom Pose (2)",
+                "type": "checkpoint"
+            },
+            {
+                "angles": [
+                    45,
+                    70,
+                    65,
+                    40,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Custom Pose (3)",
+                "type": "checkpoint"
+            },
+            {
+                "angles": [
+                    70,
+                    90,
+                    45,
+                    20,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Custom Pose (4)",
+                "type": "checkpoint"
+            },
+            {
+                "angles": [
+                    90,
+                    60,
+                    30,
+                    10,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Custom Pose (5)",
+                "type": "checkpoint"
+            }
+        ],
+        "loop": "ON",
+        "speed_mult": "2.0x",
+        "trans_ms": 350
+    },
+    "spider": {
+        "curve": "Linear (Lerp)",
+        "hold_ms": 0,
+        "keyframes": [
+            {
+                "angles": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CW"
+                ],
+                "hold_time": 400,
+                "limits": [
+                    180,
+                    180,
+                    180,
+                    180,
+                    180,
+                    180,
+                    180
+                ],
+                "name": "Open Hand",
+                "type": "checkpoint"
+            },
+            {
+                "angles": [
+                    0,
+                    175,
+                    130,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "directions": [
+                    "CW",
+                    "CW",
+                    "CW",
+                    "CCW",
+                    "CCW",
+                    "CW",
+                    "CCW"
+                ],
+                "hold_time": 500,
+                "limits": [
+                    110,
+                    175,
+                    130,
+                    115,
+                    55,
+                    45,
+                    125
+                ],
+                "name": "Custom Pose (2)",
+                "type": "checkpoint"
+            }
+        ],
+        "loop": "ON",
+        "speed_mult": "1.0x",
+        "trans_ms": 407
+    }
+}

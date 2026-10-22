@@ -1,0 +1,429 @@
+{
+    "Okay": {
+        "angles": [
+            77,
+            0,
+            0,
+            0,
+            0,
+            12,
+            59
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb",
+            "Wait 1",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    },
+    "Open Hand": {
+        "angles": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb",
+            "Wait 1",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    },
+    "Spider Man": {
+        "angles": [
+            0,
+            134,
+            130,
+            0,
+            16,
+            38,
+            30
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Wait 1",
+            "Thumb",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    },
+    "fist": {
+        "angles": [
+            110,
+            140,
+            130,
+            115,
+            13,
+            24,
+            60
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Wait 1",
+            "Thumb",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    },
+    "middle finger": {
+        "angles": [
+            110,
+            0,
+            130,
+            115,
+            16,
+            0,
+            82
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Wait 1",
+            "Thumb",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    },
+    "peace": {
+        "angles": [
+            0,
+            0,
+            130,
+            115,
+            21,
+            45,
+            19
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Wait 1",
+            "Thumb",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    },
+    "pointer": {
+        "angles": [
+            0,
+            134,
+            130,
+            115,
+            18,
+            38,
+            30
+        ],
+        "directions": [
+            "CW",
+            "CW",
+            "CW",
+            "CCW",
+            "CCW",
+            "CW",
+            "CCW"
+        ],
+        "limits": [
+            110,
+            175,
+            130,
+            115,
+            55,
+            45,
+            125
+        ],
+        "names": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Thumb Base",
+            "Thumb Pivot",
+            "Thumb Curl"
+        ],
+        "sequence": [
+            "Index",
+            "Middle",
+            "Ring",
+            "Pinky",
+            "Wait 1",
+            "Thumb",
+            "Wait 2",
+            "Wait 3",
+            "Wait 4"
+        ],
+        "wait_modes": {
+            "Wait 1": "Auto (Completion)",
+            "Wait 2": "Fixed Time",
+            "Wait 3": "Fixed Time",
+            "Wait 4": "Fixed Time"
+        },
+        "wait_times": {
+            "Wait 1": 300,
+            "Wait 2": 300,
+            "Wait 3": 300,
+            "Wait 4": 300
+        }
+    }
+}

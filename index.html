@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSP432 / ESP32 7-Servo Bionic Hand Controller & Animation Studio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #080D1A; color: #FFFFFF; padding: 10px; font-family: 'Inter', sans-serif;">
+
+    <div class="window-container">
+        <!-- TOP HEADER NAVBAR -->
+        <header class="top-header-bar">
+            <div class="header-left">
+                <label for="comPortSelect">Port / Mode:</label>
+                <select id="comPortSelect" class="custom-select">
+                    <option value="webserial">Web Serial (USB Direct)</option>
+                    <option value="http://localhost:5050">Local Python Bridge (localhost:5050)</option>
+                </select>
+                <button id="btnRefreshPorts" class="btn btn-blue">Scan</button>
+                <button id="btnConnect" class="btn btn-green">Connect</button>
+                <div id="statusIndicator" class="status-badge disconnected">
+                    <span class="status-dot"></span>
+                    <span id="statusText">Disconnected</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="btnExportData" class="btn btn-secondary btn-sm" title="Export current poses and animations to JSON">📥 Export JSON</button>
+                <button id="btnImportData" class="btn btn-secondary btn-sm" title="Import poses and animations from JSON">📤 Import JSON</button>
+                <input type="file" id="fileImportInput" accept=".json" style="display:none;">
+                <label class="checkbox-container" style="margin-left: 8px;">
+                    <input type="checkbox" id="masterSendingCheck" checked>
+                    <span class="label-text">Master Global Sending</span>
+                </label>
+            </div>
+        </header>
+
+        <!-- MAIN TABS NAVIGATION -->
+        <nav class="main-tabs-nav">
+            <button class="tab-btn active" data-tab="tab-direct">
+                <span class="tab-icon">✋</span> Direct Control & Sequence Planner
+            </button>
+            <button class="tab-btn" data-tab="tab-animation">
+                <span class="tab-icon">🎬</span> Animation Studio (50Hz Interpolation)
+            </button>
+        </nav>
+
+        <!-- TAB 1: DIRECT CONTROL & SEQUENCE PLANNER -->
+        <div id="tab-direct" class="tab-content active">
+            <div class="tab-grid-layout">
+                
+                <!-- LEFT SIDEBAR: POSES LIBRARY -->
+                <aside class="sidebar-panel">
+                    <div class="panel-header">Poses Library</div>
+                    <button id="btnSaveNewPose" class="btn btn-purple full-width">+ Save New Pose</button>
+                    <button id="btnUpdateSelectedPose" class="btn btn-cyan full-width">💾 Update Selected Pose</button>
+                    
+                    <div class="listbox-container">
+                        <ul id="posesListbox" class="custom-listbox">
+                            <!-- Dynamically populated -->
+                        </ul>
+                    </div>
+
+                    <button id="btnDeleteSelectedPose" class="btn btn-red full-width">🗑 Delete Selected Pose</button>
+                </aside>
+
+                <!-- MAIN CENTER CONTENT AREA -->
+                <section class="main-center-panel">
+                    
+                    <!-- 7 SERVO CHANNEL CARDS -->
+                    <div class="servo-channels-grid" id="servoCardsGrid">
+                        <!-- 7 Servo Cards populated dynamically -->
+                    </div>
+
+                    <!-- POSE SEQUENCE PLANNER (REORDERABLE TIMELINE) -->
+                    <div class="planner-panel">
+                        <div class="planner-header">
+                            <span>Pose Sequence Planner (Reorderable Timeline)</span>
+                            <button id="btnTestSequence" class="btn btn-green btn-sm">► Test Sequence</button>
+                        </div>
+                        
+                        <div class="sequence-tiles-row" id="sequenceTilesRow">
+                            <!-- Joint Tiles and Wait Tiles populated dynamically -->
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- TAB 2: ANIMATION STUDIO (50Hz INTERPOLATION) -->
+        <div id="tab-animation" class="tab-content">
+            <div class="tab-grid-layout">
+                
+                <!-- LEFT SIDEBAR: ANIMATIONS LIBRARY -->
+                <aside class="sidebar-panel">
+                    <div class="panel-header">Animations Library</div>
+                    <button id="btnSaveNewAnim" class="btn btn-purple full-width">+ Save New Animation</button>
+                    <button id="btnUpdateSelectedAnim" class="btn btn-cyan full-width">💾 Update Selected</button>
+                    
+                    <div class="listbox-container">
+                        <ul id="animationsListbox" class="custom-listbox">
+                            <!-- Dynamically populated -->
+                        </ul>
+                    </div>
+
+                    <button id="btnPlaySelectedAnim" class="btn btn-green full-width">► Play Selected</button>
+                    <button id="btnDeleteSelectedAnim" class="btn btn-red full-width">🗑 Delete Selected</button>
+                </aside>
+
+                <!-- MAIN CENTER CONTENT AREA FOR ANIMATION STUDIO -->
+                <section class="main-center-panel animation-studio-layout">
+                    <div class="panel-header">Animation Studio — Multi-Pose Keyframing & 50Hz Interpolation Engine</div>
+
+                    <div class="animation-split-grid">
+                        
+                        <!-- LEFT SUB-PANEL: KEYFRAME SEQUENCE TIMELINE -->
+                        <div class="sub-panel keyframe-timeline-panel">
+                            <div class="sub-header">Keyframe Sequence Timeline</div>
+                            <div class="kf-actions-row">
+                                <button id="btnAddPoseKF" class="btn btn-blue btn-sm">+ Add Library Pose KF</button>
+                                <button id="btnCaptureCurrentKF" class="btn btn-teal btn-sm">📷 Capture Current Angles KF</button>
+                            </div>
+
+                            <div class="keyframes-list" id="keyframesList">
+                                <!-- Keyframe items dynamically rendered -->
+                            </div>
+                        </div>
+
+                        <!-- RIGHT SUB-PANEL: INTERPOLATION ENGINE & CONTROLS -->
+                        <div class="sub-panel interpolation-controls-panel">
+                            <div class="sub-header">Interpolation Engine & Controls</div>
+                            
+                            <div class="control-group">
+                                <label for="animCurveSelect">Motion Interpolation Curve:</label>
+                                <select id="animCurveSelect" class="custom-select full-width">
+                                    <option value="S-Curve (Cosine)">S-Curve (Cosine)</option>
+                                    <option value="Linear">Linear</option>
+                                    <option value="Exponential">Exponential</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="slider-label-row">
+                                    <label>Transition Time between Keyframes (ms):</label>
+                                    <span id="transMsVal" class="val-readout">1000 ms</span>
+                                </div>
+                                <input type="range" id="animTransMsSlider" min="100" max="5000" step="50" value="1000" class="custom-slider">
+                            </div>
+
+                            <div class="control-group">
+                                <div class="slider-label-row">
+                                    <label>Hold Time at Pause Keyframes (ms):</label>
+                                    <span id="holdMsVal" class="val-readout">500 ms</span>
+                                </div>
+                                <input type="range" id="animHoldMsSlider" min="0" max="5000" step="50" value="500" class="custom-slider">
+                            </div>
+
+                            <div class="control-group">
+                                <label for="animSpeedSelect">Global Speed Multiplier:</label>
+                                <select id="animSpeedSelect" class="custom-select full-width">
+                                    <option value="0.5x">0.5x</option>
+                                    <option value="1.0x" selected>1.0x</option>
+                                    <option value="1.5x">1.5x</option>
+                                    <option value="2.0x">2.0x</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group checkbox-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="animLoopCheck" checked>
+                                    <span class="label-text">🔁 Loop Continuously</span>
+                                </label>
+                            </div>
+
+                            <div class="anim-playback-buttons">
+                                <button id="btnStartAnimation" class="btn btn-green flex-1">► Start Animation</button>
+                                <button id="btnStopAnimation" class="btn btn-red flex-1">█ Stop Animation</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- BOTTOM FOOTER: REAL-TIME TERMINAL CONSOLE -->
+        <footer class="terminal-console-panel">
+            <div class="console-header">
+                <span>Real-Time Terminal Console</span>
+                <button id="btnClearConsole" class="btn btn-secondary btn-sm">Clear Log</button>
+            </div>
+            <div id="consoleOutput" class="console-body">
+                <!-- Log lines -->
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

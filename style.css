@@ -1,0 +1,642 @@
+/* 
+ * MSP432 7-Servo Bionic Hand Controller & Animation Studio
+ * CSS Stylesheet — Pixel-Perfect Desktop Layout Replica
+ */
+
+:root {
+    --bg-dark: #060A14;
+    --bg-panel: #0A1124;
+    --bg-input: #02040A;
+    --border-blue: #2563EB;
+    --border-dim: #1E3A8A;
+    
+    --text-white: #FFFFFF;
+    --text-sub: #94A3B8;
+    --text-green: #10B981;
+    --text-blue: #60A5FA;
+    
+    --btn-blue: #2563EB;
+    --btn-blue-hover: #1D4ED8;
+    --btn-green: #10B981;
+    --btn-green-hover: #059669;
+    --btn-red: #EF4444;
+    --btn-red-hover: #DC2626;
+    --btn-purple: #8B5CF6;
+    --btn-purple-hover: #7C3AED;
+    --btn-cyan: #0284C7;
+    --btn-cyan-hover: #0369A1;
+    --btn-teal: #0D9488;
+    --btn-orange: #F59E0B;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+html, body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    padding: 8px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.window-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* TOP HEADER NAVBAR                                                   */
+/* ------------------------------------------------------------------ */
+.top-header-bar {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-header-bar label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.custom-select, .custom-input {
+    background-color: var(--bg-input);
+    color: var(--text-white);
+    border: 1px solid var(--border-blue);
+    border-radius: 3px;
+    padding: 4px 8px;
+    font-size: 12px;
+    outline: none;
+    max-width: 100%;
+}
+
+.custom-select:focus, .custom-input:focus {
+    border-color: #60A5FA;
+    box-shadow: 0 0 4px rgba(96, 165, 250, 0.5);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Status Badge */
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-dim);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.status-badge.disconnected { color: var(--btn-red); }
+.status-badge.disconnected .status-dot { background-color: var(--btn-red); }
+
+.status-badge.connected { color: var(--text-green); }
+.status-badge.connected .status-dot { background-color: var(--text-green); box-shadow: 0 0 6px var(--text-green); }
+
+/* Checkbox Styling */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    accent-color: var(--btn-blue);
+    width: 14px;
+    height: 14px;
+}
+
+/* ------------------------------------------------------------------ */
+/* BUTTONS                                                            */
+/* ------------------------------------------------------------------ */
+.btn {
+    border: none;
+    border-radius: 3px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: white;
+}
+
+.btn-blue { background-color: var(--btn-blue); }
+.btn-blue:hover { background-color: var(--btn-blue-hover); }
+
+.btn-green { background-color: var(--btn-green); }
+.btn-green:hover { background-color: var(--btn-green-hover); }
+
+.btn-red { background-color: var(--btn-red); }
+.btn-red:hover { background-color: var(--btn-red-hover); }
+
+.btn-purple { background-color: var(--btn-purple); }
+.btn-purple:hover { background-color: var(--btn-purple-hover); }
+
+.btn-cyan { background-color: var(--btn-cyan); }
+.btn-cyan:hover { background-color: var(--btn-cyan-hover); }
+
+.btn-teal { background-color: var(--btn-teal); }
+.btn-secondary { background-color: #1E293B; border: 1px solid var(--border-blue); }
+.btn-secondary:hover { background-color: #334155; }
+
+.btn-sm { padding: 3px 6px; font-size: 10px; }
+
+/* ------------------------------------------------------------------ */
+/* MAIN NAVIGATION TABS                                               */
+/* ------------------------------------------------------------------ */
+.main-tabs-nav {
+    display: flex;
+    gap: 4px;
+}
+
+.tab-btn {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    color: var(--text-sub);
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tab-btn:hover {
+    color: var(--text-white);
+}
+
+.tab-btn.active {
+    background-color: var(--btn-blue);
+    color: var(--text-white);
+    border-color: var(--btn-blue);
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ------------------------------------------------------------------ */
+/* TAB GRID LAYOUT                                                    */
+/* ------------------------------------------------------------------ */
+.tab-grid-layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+/* Sidebar Panel */
+.sidebar-panel {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.panel-header {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-blue);
+    margin-bottom: 2px;
+}
+
+.listbox-container {
+    flex: 1;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-blue);
+    border-radius: 3px;
+    min-height: 380px;
+    max-height: 480px;
+    overflow-y: auto;
+}
+
+.custom-listbox {
+    list-style: none;
+}
+
+.custom-listbox li {
+    padding: 6px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid #1E293B;
+}
+
+.custom-listbox li:hover {
+    background-color: #1E293B;
+}
+
+.custom-listbox li.active {
+    background-color: var(--btn-blue);
+    color: white;
+}
+
+/* ------------------------------------------------------------------ */
+/* MAIN CENTER PANEL & 7 SERVO CARDS                                  */
+/* ------------------------------------------------------------------ */
+.main-center-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Strict 7-Column Horizontal Grid */
+.servo-channels-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.servo-card {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.servo-card .ch-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-sub);
+}
+
+.servo-card .name-input {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 3px;
+}
+
+/* Segmented CW/CCW */
+.segmented-dir {
+    display: flex;
+    width: 100%;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-blue);
+    border-radius: 3px;
+    padding: 1px;
+}
+
+.dir-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--text-sub);
+    padding: 2px 0;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.dir-btn.active {
+    background-color: var(--btn-blue);
+    color: white;
+}
+
+.input-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+.input-block label {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-sub);
+}
+
+.input-block input {
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    padding: 2px;
+}
+
+.phys-out-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-sub);
+    margin-top: 1px;
+}
+
+.phys-out-val {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-green);
+    margin-bottom: 1px;
+}
+
+/* Custom Slider Styling */
+.custom-slider {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    accent-color: var(--btn-blue);
+    cursor: pointer;
+    margin: 2px 0;
+}
+
+.card-btns-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* POSE SEQUENCE PLANNER                                              */
+/* ------------------------------------------------------------------ */
+.planner-panel {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+}
+
+.planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-blue);
+}
+
+.sequence-tiles-row {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+.seq-tile {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    min-width: 120px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.tile-nav-btns {
+    display: flex;
+    gap: 3px;
+    width: 100%;
+}
+
+.tile-nav-btn {
+    flex: 1;
+    background-color: var(--btn-blue);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 1px 0;
+}
+
+.tile-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-green);
+}
+
+.tile-subtitle {
+    font-size: 9px;
+    color: var(--text-sub);
+}
+
+.seq-tile.wait-tile .tile-title {
+    color: #FBBF24;
+}
+
+/* ------------------------------------------------------------------ */
+/* ANIMATION STUDIO LAYOUT                                            */
+/* ------------------------------------------------------------------ */
+.animation-studio-layout {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.animation-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.sub-panel {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sub-header {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-blue);
+}
+
+.kf-actions-row {
+    display: flex;
+    gap: 6px;
+}
+
+.keyframes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.kf-item {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-blue);
+    border-radius: 3px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kf-name {
+    flex: 1;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-pause {
+    background-color: var(--btn-orange);
+    color: black;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+.badge-checkpoint {
+    background-color: #06B6D4;
+    color: black;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+/* Interpolation Controls */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.control-group label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-sub);
+}
+
+.slider-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.val-readout {
+    color: var(--text-blue);
+    font-weight: 700;
+}
+
+.anim-playback-buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.flex-1 { flex: 1; }
+
+/* ------------------------------------------------------------------ */
+/* TERMINAL CONSOLE LOG                                               */
+/* ------------------------------------------------------------------ */
+.terminal-console-panel {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-blue);
+    border-radius: 4px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.console-body {
+    background-color: #02040A;
+    border: 1px solid var(--border-blue);
+    border-radius: 3px;
+    padding: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-green);
+    height: 100px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.log-line {
+    word-break: break-all;
+    line-height: 1.3;
+}
